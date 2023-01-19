@@ -15,4 +15,8 @@ public class Base64Helper {
         return new String(decoder.decode(encodedString));
     }
 
+    public static String encodeBasicAuth(String username, String password) {
+        return "Basic " + encode(username + ":" + password);
+    }
+
 }

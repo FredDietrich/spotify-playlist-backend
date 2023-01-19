@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
@@ -29,6 +30,7 @@ public class Token extends PanacheEntity {
 
     @ManyToOne
     @JoinColumn(name="account_id", nullable=false)
+    @JsonBackReference
     public Account account;
 
 }
